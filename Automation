@@ -1,0 +1,12 @@
+def handle_incident(incident):
+    if incident == "gpu_overheat":
+        print("Reducing GPU workload...")
+        print("Increasing cooling speed...")
+        print("Alerting administrator...")
+    elif incident == "ddos":
+        print("Applying rate limiting...")
+        print("Blocking malicious IP addresses...")
+        print("Scaling API gateway...")
+    elif incident == "database":
+        print("Restarting PostgreSQL...")
+        print("Checking connection pool...")
