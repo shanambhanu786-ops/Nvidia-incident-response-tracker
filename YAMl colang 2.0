@@ -1,0 +1,9 @@
+define user report gpu issue
+    "GPU temperature is above 95 degrees"
+    "GPU overheating"
+
+define flow gpu_protection
+    user report gpu issue
+    bot say "GPU overheating detected."
+    bot say "Initiating cooling procedure."
+    execute gpu_mitigation
