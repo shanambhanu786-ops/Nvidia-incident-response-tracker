@@ -1,0 +1,29 @@
+from nemoguardrails import LLMRails, RailsConfig
+
+# Load Guardrails configuration
+config = RailsConfig.from_path("./config")
+rails = LLMRails(config)
+
+incident_prompt = """
+You are an AI Incident Response Commander.
+
+Incident:
+- GPU temperature: 98°C
+- Kubernetes Node: node-f9
+- API latency: 850ms
+
+Provide:
+1. Severity
+2. Root cause
+3. Immediate mitigation
+4. Long-term recommendation
+"""
+
+response = rails.generate(messages=[
+    {
+        "role": "user",
+        "content": incident_prompt
+    }
+])
+
+print(response["content"])
